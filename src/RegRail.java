@@ -33,11 +33,14 @@ import java.lang.*;
 class RegRail extends Frame implements ActionListener
 {
 
-  Panel p1,p2,p3,p4,p5;
-  Label l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11;
-  FlowLayout fl=new FlowLayout();Button b1,b2;
-  String str1,str2,str3,str4,str5,str6,str7,str8,str9,str10,str11;
-  TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10,tf11;
+  Panel p1,p2,p3,p4,p5; // 5 panels for adding other fields
+  Label l,l1,l2,l3,l4,l5,l6,l7,l8,l9,l10,l11; //Labels for naming
+  FlowLayout fl=new FlowLayout(); //Overall UI
+  Button b1,b2; //Confirm and Close buttons
+  String str1,str2,str3,str4,str5,str6,str7,str8,str9,str10,str11; //Data vars
+  TextField tf1,tf2,tf3,tf4,tf5,tf6,tf7,tf8,tf9,tf10,tf11; //Input fields
+
+  //Overall GUI design happens here
   RegRail()
   {
     p5=new Panel();	p3=new Panel();
@@ -99,12 +102,13 @@ class RegRail extends Frame implements ActionListener
     add(p4,"South");
     setVisible(true);
     setSize(600,300);
-
-
   }
+
   public void textValueChanged(TextEvent ae)
   {
   }
+
+  //Event Listener
   public void actionPerformed(ActionEvent ae)
   {
     if(ae.getSource()==b1)
@@ -146,8 +150,6 @@ class RegRail extends Frame implements ActionListener
         f.write(bb10);
         f.write(bb11);
         //f.write(str1.charAt(i));
-
-
       }
       catch(Exception e)
       {
@@ -159,8 +161,11 @@ class RegRail extends Frame implements ActionListener
       System.exit(0);
     }
   }
+
+  //Main Function
   public static void main(String args[])
   {
+    //Initialise the GUI
     RegRail rr=new RegRail();
   }
 }
